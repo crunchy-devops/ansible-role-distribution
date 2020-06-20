@@ -1,0 +1,16 @@
+---
+# tasks file for apache.ubuntu
+# apk add openrc --no-cache
+# apk add apache2 --no-cache
+# rc-service --list
+# rc-service apache2 start
+#
+- name: update all packages
+  apk:
+    available: yes
+    upgrade: yes
+- name: install apache2
+  apk:
+    name: apache2
+    state: latest
+    update_cache: yes
